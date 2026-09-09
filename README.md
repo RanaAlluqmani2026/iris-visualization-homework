@@ -39,3 +39,7 @@ https://iris-visualization-rana.streamlit.app/
 ## Author
 
 Rana Alluqmani
+
+## AI Use Acknowledgment
+
+AI tools were used in a limited supporting role during this assignment, primarily for language assistance, wording refinement, and clarification of instructions. The coding, visualization choices, analysis, and final implementation were completed and reviewed by the author.
