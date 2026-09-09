@@ -15,9 +15,12 @@ st.dataframe(avg_petal)
 fig1 = px.bar(avg_petal, x="species", y="petal_length",
               title="Chart 1: Average Petal Length by Species")
 st.plotly_chart(fig1)
-st.write("Encoding: Petal length is represented by bar height. Length and position on a common baseline allow accurate comparison between species.")
+st.markdown("""
+### Why this design works
+Average petal length is encoded through bar length. Because all bars start from the same baseline, differences among the three species can be compared accurately and quickly.
 
-st.write("Principle: Similarity. The bars use the same visual style, helping the viewer perceive them as values belonging to the same comparison.")
+**Visual principle — Similarity:** The bars share the same shape and visual style, so the viewer naturally understands that they belong to the same comparison.
+""")
 fig2 = px.scatter(
     avg_petal,
     x="species",
@@ -27,9 +30,12 @@ fig2 = px.scatter(
 
 st.plotly_chart(fig2)
 
-st.write("Encoding: Petal length is represented by the vertical position of a point. Position on a common scale is highly accurate for comparing values.")
+st.markdown("""
+### Why this design works
+Here, average petal length is represented by the vertical position of each point on a shared scale. Position is a highly accurate visual channel, making even relatively small differences between species easy to compare.
 
-st.write("Principle: Proximity. Each point is placed close to its species label, making the association easy to perceive.")
+**Visual principle — Proximity:** Each point is positioned directly above its species label, which makes the relationship between the value and its category easy to perceive.
+""")
 fig3 = px.scatter(
     avg_petal,
     x="species",
@@ -41,13 +47,18 @@ fig3 = px.scatter(
 
 st.plotly_chart(fig3)
 
-st.write("Encoding: Petal length is represented by circle size (area). Area is less perceptually accurate than position or length, so precise comparisons are more difficult.")
+st.markdown("""
+### Why this design works
+In this version, average petal length is encoded by circle size. Larger circles suggest larger values immediately, but exact differences are harder to judge than when using position or bar length.
 
-st.write("Principle: Similarity. The circles share the same shape and style, so they are perceived as part of the same comparison.")
-st.subheader("Comparison of Visual Encodings")
+**Visual principle — Preattentive size:** Differences in circle size attract attention quickly, allowing the viewer to notice the overall ranking before making a precise comparison.
+""")
+st.subheader("What Changes When the Encoding Changes?")
 
 st.write("""
-Among the three visualizations, position is the most accurate encoding for comparing values because the points share a common scale. Length is also effective because the bars share a common baseline. Area is less accurate because differences in circle size are harder to judge precisely.
+The three charts show exactly the same average petal-length values, but they do not communicate those values equally well.
 
-Therefore, the position encoding provides the clearest comparison of average petal length among the three Iris species.
+The position-based chart makes comparison most precise because the values are read from locations on a shared scale. The bar chart is also easy to interpret because bar lengths begin from the same baseline. In contrast, the circle-size chart makes the general ranking obvious, but estimating the exact differences is more difficult.
+
+The data remain the same in all three views; only the visual channel changes. This demonstrates how encoding choice can affect how quickly and accurately a viewer understands the same information.
 """)
