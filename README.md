@@ -1,6 +1,6 @@
 # Iris Data Visualization
 
-This project was created for DATS 6401: Visualization of Complex Data.
+This project is created for DATS 6401: Visualization of Complex Data.
 
 ## Research Question
 
